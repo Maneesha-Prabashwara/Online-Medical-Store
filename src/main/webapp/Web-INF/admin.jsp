@@ -41,3 +41,9 @@
             <p class="text-sm text-gray-500 mt-1">Manage all registered suppliers.</p>
             <a href="${pageContext.request.contextPath}/supplier" class="mt-3 inline-block text-blue-600 hover:underline">View</a>
         </div>
+
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-md">
+            <h3 class="text-lg font-medium">Users</h3>
+            <p class="text-sm text-gray-500 mt-1">Manage users and customers.</p>
+            <a href="${pageContext.request.contextPath}/user" class="mt-3 inline-block text-blue-600 hover:underline">View</a>
+        </div>
