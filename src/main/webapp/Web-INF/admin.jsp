@@ -30,3 +30,14 @@
         </div>
     </div>
 </nav>
+
+<!-- Dashboard content -->
+<div class="container mx-auto mt-8 px-4">
+    <h2 class="text-xl font-semibold mb-4">Welcome, Admin!</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-md">
+            <h3 class="text-lg font-medium">Suppliers</h3>
+            <p class="text-sm text-gray-500 mt-1">Manage all registered suppliers.</p>
+            <a href="${pageContext.request.contextPath}/supplier" class="mt-3 inline-block text-blue-600 hover:underline">View</a>
+        </div>
