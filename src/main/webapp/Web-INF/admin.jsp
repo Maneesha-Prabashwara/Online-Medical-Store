@@ -47,3 +47,32 @@
             <p class="text-sm text-gray-500 mt-1">Manage users and customers.</p>
             <a href="${pageContext.request.contextPath}/user" class="mt-3 inline-block text-blue-600 hover:underline">View</a>
         </div>
+
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-md">
+            <h3 class="text-lg font-medium">Medicines</h3>
+            <p class="text-sm text-gray-500 mt-1">Manage medicines and inventory.</p>
+            <a href="${pageContext.request.contextPath}/addMedicine" class="mt-3 inline-block text-blue-600 hover:underline">View</a>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-md">
+            <h3 class="text-lg font-medium">Orders</h3>
+            <p class="text-sm text-gray-500 mt-1">Manage customer orders and delivery.</p>
+            <a href="${pageContext.request.contextPath}/viewOrder" class="mt-3 inline-block text-blue-600 hover:underline">View</a>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-md">
+            <h3 class="text-lg font-medium">Reviews</h3>
+            <p class="text-sm text-gray-500 mt-1">Manage customer reviews and responses.</p>
+            <a href="${pageContext.request.contextPath}/getPendingReviews" class="mt-3 inline-block text-blue-600 hover:underline">View</a>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-md">
+            <h3 class="text-lg font-medium">Admins</h3>
+            <p class="text-sm text-gray-500 mt-1">Manage admins</p>
+            <a href="${pageContext.request.contextPath}/admin-creation" class="mt-3 inline-block text-blue-600 hover:underline">View</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
