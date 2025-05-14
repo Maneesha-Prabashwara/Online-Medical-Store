@@ -13,3 +13,14 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
+public class GenericCRUD<T > {
+    private final Class<T> typeParameterClass;
+    private final File file;
+
+
+    public GenericCRUD(Class<T> typeParameterClass, String filePath) {
+        this.typeParameterClass = typeParameterClass;
+        this.file = new File(filePath);
+    }
+    
