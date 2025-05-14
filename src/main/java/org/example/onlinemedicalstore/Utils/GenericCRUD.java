@@ -46,3 +46,26 @@ public class GenericCRUD<T > {
             e.printStackTrace();
         }
     }
+
+    public List<T> getAll() {
+        return readAll();
+    }
+
+    public void add(T newItem) {
+        List<T> items = readAll();
+        items.add(newItem);
+        writeAll(items);
+    }
+
+    public void update(java.util.function.Predicate<T> predicate, T updatedItem) {
+        List<T> items = readAll();
+        for (int i = 0; i < items.size(); i++) {
+            if (predicate.test(items.get(i))) {
+                items.set(i, updatedItem);
+                break;
+            }
+        }
+        writeAll(items);
+    }
+
+    
