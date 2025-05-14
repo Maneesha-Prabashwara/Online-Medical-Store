@@ -86,3 +86,31 @@ public class GenericCRUD<T > {
                 })
                 .findFirst();
     }
+
+    public Optional<T> get(java.util.function.Predicate<T> predicate) {
+        return readAll().stream().filter(predicate).findFirst();
+    }
+
+
+
+    public Optional<T> findOne(String username) {
+        return readAll().stream()
+                .filter(item -> {
+                    try {
+                        return item.getClass().getMethod("getUsername")
+                                .invoke(item).equals(username);
+                    } catch (Exception e) {
+                        return false;
+                    }
+                })
+                .findFirst();
+    }
+
+    public void deleteById(java.util.function.Predicate<T> predicate) {
+        List<T> items = readAll();
+        items.removeIf(predicate); // Remove the item(s) matching the predicate
+        writeAll(items);
+    }
+
+
+}
