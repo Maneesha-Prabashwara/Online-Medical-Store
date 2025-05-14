@@ -68,4 +68,21 @@ public class GenericCRUD<T > {
         writeAll(items);
     }
 
-    
+    public void delete(java.util.function.Predicate<T> predicate) {
+        List<T> items = readAll();
+        items.removeIf(predicate);
+        writeAll(items);
+    }
+    public Optional<T> findOneById(String id) {
+        List<T> items = readAll();
+        return items.stream()
+                .filter(item -> {
+                    try {
+                        // getting  the model by giving id
+                        return item.getClass().getMethod("getId").invoke(item).equals(id);
+                    } catch (Exception e) {
+                        return false;
+                    }
+                })
+                .findFirst();
+    }
