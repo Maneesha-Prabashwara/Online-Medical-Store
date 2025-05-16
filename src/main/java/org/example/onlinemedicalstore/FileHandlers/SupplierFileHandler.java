@@ -42,3 +42,43 @@ public class SupplierFileHandler implements ISupplierFileHandler {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public List<Supplier> readSupplierFromFile() {
+        File file = new File(FILEPATH);
+
+        try {
+            // Create file if it doesn't exist
+            if (!file.exists()) {
+                File parentDir = file.getParentFile();
+                if (parentDir != null && !parentDir.exists()) {
+                    parentDir.mkdirs();
+                }
+                file.createNewFile();
+                return new ArrayList<>(); // Return empty list if file is newly created
+            }
+
+            // Read file contents
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            StringBuilder jsonBuilder = new StringBuilder();
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                jsonBuilder.append(line);
+            }
+
+            reader.close();
+
+            String json = jsonBuilder.toString();
+            if (json.isEmpty()) {
+                return new ArrayList<>();
+            }
+
+            return JsonHelper.fromJsonToList(json, Supplier.class);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
+    }
+}
