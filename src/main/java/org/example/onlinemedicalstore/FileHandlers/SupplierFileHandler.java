@@ -1,9 +1,9 @@
 package org.example.onlinemedicalstore.FileHandlers;
 
-import org.example.onlinemediclestore.Classes.Supplier;
-import org.example.onlinemediclestore.FileConfig.Config;
-import org.example.onlinemediclestore.Interfaces.ISupplierFileHandler;
-import org.example.onlinemediclestore.utils.JsonHelper;
+import org.example.onlinemedicalstore.Classes.Supplier;
+import org.example.onlinemedicalstore.FileConfig.Config;
+import org.example.onlinemedicalstore.Interfaces.ISupplierFileHandler;
+import org.example.onlinemedicalstore.utils.JsonHelper;
 
 import java.io.*;
 import java.util.ArrayList;
