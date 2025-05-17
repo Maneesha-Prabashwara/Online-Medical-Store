@@ -1,9 +1,9 @@
 package org.example.onlinemedicalstore.FileHandlers;
 
-import org.example.onlinemediclestore.Classes.Supplier;
-import org.example.onlinemediclestore.FileConfig.Config;
-import org.example.onlinemediclestore.Interfaces.ISupplierFileHandler;
-import org.example.onlinemediclestore.utils.JsonHelper;
+import org.example.onlinemedicalstore.Classes.Supplier;
+import org.example.onlinemedicalstore.FileConfig.Config;
+import org.example.onlinemedicalstore.Interfaces.ISupplierFileHandler;
+import org.example.onlinemedicalstore.utils.JsonHelper;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -42,3 +42,43 @@ public class SupplierFileHandler implements ISupplierFileHandler {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public List<Supplier> readSupplierFromFile() {
+        File file = new File(FILEPATH);
+
+        try {
+            // Create file if it doesn't exist
+            if (!file.exists()) {
+                File parentDir = file.getParentFile();
+                if (parentDir != null && !parentDir.exists()) {
+                    parentDir.mkdirs();
+                }
+                file.createNewFile();
+                return new ArrayList<>(); // Return empty list if file is newly created
+            }
+
+            // Read file contents
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            StringBuilder jsonBuilder = new StringBuilder();
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                jsonBuilder.append(line);
+            }
+
+            reader.close();
+
+            String json = jsonBuilder.toString();
+            if (json.isEmpty()) {
+                return new ArrayList<>();
+            }
+
+            return JsonHelper.fromJsonToList(json, Supplier.class);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
+    }
+}
