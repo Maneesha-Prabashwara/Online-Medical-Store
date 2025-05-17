@@ -3,7 +3,8 @@ package org.example.onlinemedicalstore.Servlets;
 import java.io.IOException;
 
 public class ReviewServlet {
-}import com.sun.net.httpserver.HttpsServer;
+}
+import com.sun.net.httpserver.HttpsServer;
 import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -70,4 +71,3 @@ public class ReviewServlet extends HttpServlet {
     }
 
 }
-
