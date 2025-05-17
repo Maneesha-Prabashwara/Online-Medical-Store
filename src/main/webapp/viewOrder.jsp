@@ -66,3 +66,49 @@
             statusColor = "red";
         }
     }
+
+%>
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-<%= statusColor %>-100 text-<%= statusColor %>-800">
+                                        <%= status != null ? status : "Unknown" %>
+                                    </span>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                        <div class="flex space-x-2">
+                            <a href="editOrder?id=<%= order.getId() %>" class="text-indigo-600 hover:text-indigo-900">
+                                <i class="fas fa-edit"></i> Edit
+                            </a>
+
+
+
+                            <form action="./delete" method="post" onsubmit="return confirm('Are you sure you want to delete this order?');">
+                                <input type="hidden" name="orderId" value="<%= order.getId() %>">
+                                <button type="submit"  class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-sm">
+                                    <input type="hidden"  name="type" value="order">
+                                    <input type="hidden" name="orderID" value="<%= order.getId() %>"/>
+                                    <i class="fas fa-trash-alt">Delete</i>
+                                </button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+        <% } else { %>
+        <div class="py-8 text-center text-gray-500 italic">
+            No orders found in the system.
+        </div>
+        <% } %>
+    </div>
+</div>
+
+<script>
+    function confirmDelete(orderId) {
+        if(confirm("Are you sure you want to delete Order #" + orderId + "? This action cannot be undone.")) {
+            window.location.href = "deleteOrder?id=" + orderId;
+        }
+    }
+</script>
+</body>
+</html>
