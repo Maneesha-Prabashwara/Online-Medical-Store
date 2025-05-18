@@ -62,9 +62,8 @@ public class DeleteServlet extends HttpServlet {
                 }else {
 
                     System.out.println("error ");
-
-
                 }
+                break;
             case "medicine":
                 if( medicineId != null ){
                     GenericCRUD<Medicine> medicineGenericCRUD= new GenericCRUD<>(Medicine.class,Config.MEDICINES.getPath());
