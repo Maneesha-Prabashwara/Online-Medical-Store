@@ -47,6 +47,57 @@
         </form>
     </div>
 
+    <!-- Suppliers Table -->
+    <div class="bg-white p-6 rounded shadow-md">
+        <h2 class="text-xl font-semibold mb-4 text-gray-700">All Suppliers</h2>
+        <table class="min-w-full border-collapse border border-gray-300">
+            <thead class="bg-blue-100">
+            <tr>
+                <th class="border border-gray-300 px-4 py-2">Name</th>
+                <th class="border border-gray-300 px-4 py-2">Username</th>
+                <th class="border border-gray-300 px-4 py-2">Email</th>
+                <th class="border border-gray-300 px-4 py-2">Company</th>
+                <th class="border border-gray-300 px-4 py-2">Address</th>
+                <th class="border border-gray-300 px-4 py-2">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <%
+                if (suppliers != null && !suppliers.isEmpty()) {
+                    for (Supplier supplier : suppliers) {
+            %>
+            <tr class="bg-gray-50 hover:bg-gray-100">
+                <td class="border border-gray-300 px-4 py-2"><%= supplier.getName() %></td>
+                <td class="border border-gray-300 px-4 py-2"><%= supplier.getUsername() %></td>
+                <td class="border border-gray-300 px-4 py-2"><%= supplier.getEmail() %></td>
+                <td class="border border-gray-300 px-4 py-2"><%= supplier.getCompanyName() %></td>
+                <td class="border border-gray-300 px-4 py-2"><%= supplier.getAddress() %></td>
+                <td class="border border-gray-300 px-4 py-2">
+                    <form method="post" action="./delete"   onsubmit="return confirm('Are you sure you want to delete this user?');" style="display:inline;">
+                        <input type="hidden" name="username" value="<%= supplier.getUsername() %>"/>
+                        <input type="hidden" name="type" value="supplier">
+                        <button type="submit" class="text-red-600 hover:text-red-800 font-semibold">
+                            Delete
+                        </button>
+                    </form>
+
+
+                </td>
+            </tr>
+            <%
+                }
+            } else {
+            %>
+            <tr>
+                <td colspan="5" class="text-center py-4 text-gray-500">No suppliers found.</td>
+            </tr>
+            <%
+                }
+            %>
+            </tbody>
+        </table>
+    </div>
+</div>
 
 </body>
-</html>   
+</html>
