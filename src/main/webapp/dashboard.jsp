@@ -5,8 +5,8 @@
   Time: 7:17 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page import="org.example.onlinemediclestore.Classes.User" %>
-<%@ page import="org.example.onlinemediclestore.Classes.Medicine" %>
+<%@ page import="org.example.onlinemedicalstore.Classes.User" %>
+<%@ page import="org.example.onlinemedicalstore.Classes.Medicine" %>
 <%@ page import="java.util.List" %>
 <%
     User user = (User) session.getAttribute("user");
