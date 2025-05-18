@@ -1,8 +1,14 @@
 package org.example.onlinemedicalstore.utils;
 
-import org.example.onlinemediclestore.Classes.Review;
-import org.example.onlinemediclestore.Classes.VerifiedReview;
-import org.example.onlinemediclestore.Classes.PublicReview;
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+import java.util.stream.Collectors;
+
+public class ReviewManager {
+}import org.example.onlinemedicalstore.Classes.Review;
+import org.example.onlinemedicalstore.Classes.VerifiedReview;
+import org.example.onlinemedicalstore.Classes.PublicReview;
 
 import java.util.List;
 import java.util.Optional;
