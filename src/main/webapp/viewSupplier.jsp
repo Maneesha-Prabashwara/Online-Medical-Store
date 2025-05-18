@@ -8,6 +8,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Manage Suppliers</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module">
         import {openEditModel} from "./js/editPopup.js";
