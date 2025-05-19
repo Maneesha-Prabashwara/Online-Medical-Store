@@ -6,9 +6,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import org.example.onlinemediclestore.Classes.User;
-import org.example.onlinemediclestore.Classes.VerifiedReview;
-import org.example.onlinemediclestore.utils.ReviewManager;
+import org.example.onlinemedicalstore.Classes.User;
+import org.example.onlinemedicalstore.Classes.VerifiedReview;
+import org.example.onlinemedicalstore.utils.ReviewManager;
 
 import java.io.IOException;
 
