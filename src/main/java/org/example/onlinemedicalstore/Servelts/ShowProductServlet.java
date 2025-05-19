@@ -6,9 +6,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import org.example.onlinemediclestore.Classes.Medicine;
-import org.example.onlinemediclestore.FileConfig.Config;
-import org.example.onlinemediclestore.utils.GenericCRUD;
+import org.example.onlinemedicalstore.Classes.Medicine;
+import org.example.onlinemedicalstore.FileConfig.Config;
+import org.example.onlinemedicalstore.utils.GenericCRUD;
 
 import javax.print.attribute.standard.MediaName;
 import java.io.IOException;
